@@ -1,0 +1,6 @@
+{
+  "name": "GigPilot AI - Real-Time Gig Offer Co-Pilot",
+  "description": "Live AI co-pilot for gig workers. Analyzes live video and screen feeds of gig apps (DoorDash, Uber, Instacart, Flex) for instant Accept/Decline verdicts, $/mile, and profit breakdown.",
+  "requestFramePermissions": ["camera", "display-capture"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
