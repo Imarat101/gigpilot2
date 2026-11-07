@@ -273,8 +273,18 @@ Guidelines:
 
       archive.pipe(res);
       archive.directory(androidDir, 'android');
+      const githubWorkflowDir = path.join(__dirname, '.github');
+      if (fs.existsSync(githubWorkflowDir)) {
+        archive.directory(githubWorkflowDir, '.github');
+      }
       if (fs.existsSync(path.join(__dirname, 'capacitor.config.ts'))) {
         archive.file(path.join(__dirname, 'capacitor.config.ts'), { name: 'capacitor.config.ts' });
+      }
+      if (fs.existsSync(path.join(__dirname, 'package.json'))) {
+        archive.file(path.join(__dirname, 'package.json'), { name: 'package.json' });
+      }
+      if (fs.existsSync(path.join(__dirname, 'package-lock.json'))) {
+        archive.file(path.join(__dirname, 'package-lock.json'), { name: 'package-lock.json' });
       }
       archive.finalize();
     } catch (err: any) {
